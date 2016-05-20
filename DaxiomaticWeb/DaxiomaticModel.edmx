@@ -1,0 +1,2040 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="villadsenwp_dk_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Assignments">
+          <Key>
+            <PropertyRef Name="AssignmentId" />
+          </Key>
+          <Property Name="AssignmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Assignment Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="DeadLine" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Number of Tasks" Type="int" Nullable="false" />
+          <Property Name="Finished" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'villadsenwp_dk_db.dbo.Datetest' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Datetest">
+          <Property Name="date1" Type="datetime2" Precision="7" />
+          <Property Name="date2" Type="datetime2" Precision="7" />
+          <Property Name="date3" Type="datetime2" Precision="7" />
+        </EntityType>-->
+        <EntityType Name="DaxBreakData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="InputID" Type="int" />
+          <Property Name="LenMin" Type="int" />
+        </EntityType>
+        <EntityType Name="DaxBreakWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Weight" Type="float" />
+        </EntityType>
+        <EntityType Name="DaxCompanyData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="InputID" Type="int" />
+        </EntityType>
+        <EntityType Name="DaxCompanyWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="CompanyID" Type="int" />
+          <Property Name="WeightNumber" Type="int" />
+          <Property Name="Weight" Type="float" />
+        </EntityType>
+        <EntityType Name="DaxEmailData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="InputID" Type="int" />
+          <Property Name="AmountSend" Type="int" />
+          <Property Name="AmountReceived" Type="int" />
+        </EntityType>
+        <EntityType Name="DaxEmailWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="CompanyID" Type="int" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="WeightNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="DaxInputData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="HappinessScore" Type="int" />
+          <Property Name="DateAndTime" Type="datetime2" Precision="7" />
+          <Property Name="Used" Type="int" />
+        </EntityType>
+        <EntityType Name="DaxLoginInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserLevel" Type="int" />
+        </EntityType>
+        <EntityType Name="DaxMeetingData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="InputID" Type="int" />
+          <Property Name="External" Type="int" />
+          <Property Name="LenMin" Type="int" />
+        </EntityType>
+        <EntityType Name="DaxMeetingWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="WeightNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="DaxPhoneData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="InputID" Type="int" />
+          <Property Name="LenMin" Type="int" />
+        </EntityType>
+        <EntityType Name="DaxPhoneWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="CompanyID" Type="int" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="WeightNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="DaxTaskData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="InputID" Type="int" />
+          <Property Name="TypeID" Type="int" />
+          <Property Name="LenMin" Type="int" />
+        </EntityType>
+        <EntityType Name="DaxTaskDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="TaskType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DaxTaskWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="TaskType" Type="int" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="WeightNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="DaxUserData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DayOfWeekWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="Day" Type="nvarchar" MaxLength="50" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="WeightNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="EducationDatas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CurrentEducation" Type="nvarchar(max)" />
+          <Property Name="Semester" Type="int" Nullable="false" />
+          <Property Name="FavoriteField" Type="nvarchar(max)" />
+          <Property Name="LoginID_Ref" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="Location" Type="nvarchar(max)" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Finished" Type="bit" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="secLevel" Type="int" Nullable="false" />
+          <Property Name="deleted" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoginUsers">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="password" Type="nvarchar(max)" />
+          <Property Name="UserId_UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="PersonalDatas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Birthday" Type="datetime" Nullable="false" />
+          <Property Name="Nationality" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="LoginID_Ref" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectPictures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="PictureUrl" Type="nvarchar(max)" />
+          <Property Name="ProjectID_Ref" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="startTime" Type="datetime" Nullable="false" />
+          <Property Name="LoginID_Ref" Type="int" Nullable="false" />
+          <Property Name="PictureID_Ref" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="TaskId" />
+          </Key>
+          <Property Name="TaskId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Finished" Type="int" Nullable="false" />
+          <Property Name="AssignmentId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TestTable1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="50" />
+          <Property Name="Date" Type="datetime2" Precision="7" />
+          <Property Name="inputID" Type="int" />
+        </EntityType>
+        <EntityType Name="TestTable2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CompanyName" Type="nchar" MaxLength="50" />
+          <Property Name="date" Type="datetime2" Precision="7" />
+          <Property Name="inputID" Type="int" />
+        </EntityType>
+        <EntityType Name="TimeOfDayWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="TimePeriod" Type="time" Precision="7" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="WeightNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Birthday" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__DaxBreakD__Input__2334397B">
+          <End Role="DaxInputData" Type="Self.DaxInputData" Multiplicity="0..1" />
+          <End Role="DaxBreakData" Type="Self.DaxBreakData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxInputData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxBreakData">
+              <PropertyRef Name="InputID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxBreakW__UserI__4E1E9780">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxBreakWeight" Type="Self.DaxBreakWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxBreakWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxCompan__Compa__3B0BC30C">
+          <End Role="DaxCompanyData" Type="Self.DaxCompanyData" Multiplicity="0..1" />
+          <End Role="DaxCompanyWeight" Type="Self.DaxCompanyWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxCompanyData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxCompanyWeight">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxCompan__UserI__3A179ED3">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxCompanyWeight" Type="Self.DaxCompanyWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxCompanyWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxEmailD__Input__32767D0B">
+          <End Role="DaxInputData" Type="Self.DaxInputData" Multiplicity="0..1" />
+          <End Role="DaxEmailData" Type="Self.DaxEmailData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxInputData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxEmailData">
+              <PropertyRef Name="InputID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxEmailW__Compa__3EDC53F0">
+          <End Role="DaxCompanyData" Type="Self.DaxCompanyData" Multiplicity="0..1" />
+          <End Role="DaxEmailWeight" Type="Self.DaxEmailWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxCompanyData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxEmailWeight">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxEmailW__UserI__3DE82FB7">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxEmailWeight" Type="Self.DaxEmailWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxEmailWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxInputD__UserI__2057CCD0">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxInputData" Type="Self.DaxInputData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxInputData">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxMeetin__Input__2EA5EC27">
+          <End Role="DaxInputData" Type="Self.DaxInputData" Multiplicity="0..1" />
+          <End Role="DaxMeetingData" Type="Self.DaxMeetingData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxInputData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxMeetingData">
+              <PropertyRef Name="InputID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxMeetin__UserI__4B422AD5">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxMeetingWeight" Type="Self.DaxMeetingWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxMeetingWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxPhoneD__Input__36470DEF">
+          <End Role="DaxInputData" Type="Self.DaxInputData" Multiplicity="0..1" />
+          <End Role="DaxPhoneData" Type="Self.DaxPhoneData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxInputData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxPhoneData">
+              <PropertyRef Name="InputID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxPhoneW__Compa__42ACE4D4">
+          <End Role="DaxCompanyData" Type="Self.DaxCompanyData" Multiplicity="0..1" />
+          <End Role="DaxPhoneWeight" Type="Self.DaxPhoneWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxCompanyData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxPhoneWeight">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxPhoneW__UserI__41B8C09B">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxPhoneWeight" Type="Self.DaxPhoneWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxPhoneWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxTaskDa__Input__29E1370A">
+          <End Role="DaxInputData" Type="Self.DaxInputData" Multiplicity="0..1" />
+          <End Role="DaxTaskData" Type="Self.DaxTaskData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxInputData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxTaskData">
+              <PropertyRef Name="InputID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxTaskDa__TypeI__2BC97F7C">
+          <End Role="DaxTaskDetail" Type="Self.DaxTaskDetail" Multiplicity="0..1" />
+          <End Role="DaxTaskData" Type="Self.DaxTaskData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxTaskDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxTaskData">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxTaskWe__TaskT__51EF2864">
+          <End Role="DaxTaskDetail" Type="Self.DaxTaskDetail" Multiplicity="0..1" />
+          <End Role="DaxTaskWeight" Type="Self.DaxTaskWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxTaskDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxTaskWeight">
+              <PropertyRef Name="TaskType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxTaskWe__UserI__50FB042B">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxTaskWeight" Type="Self.DaxTaskWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxTaskWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DayOfWeek__UserI__4865BE2A">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DayOfWeekWeight" Type="Self.DayOfWeekWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DayOfWeekWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TimeOfDay__UserI__4589517F">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="TimeOfDayWeight" Type="Self.TimeOfDayWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TimeOfDayWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Assignments_dbo_Users_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_EducationDatas_dbo_Logins_LoginID_Ref">
+          <End Role="Logins" Type="Self.Logins" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EducationDatas" Type="Self.EducationDatas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Logins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EducationDatas">
+              <PropertyRef Name="LoginID_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Events_dbo_Users_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_LoginUsers_dbo_Users_UserId_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="LoginUsers" Type="Self.LoginUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="LoginUsers">
+              <PropertyRef Name="UserId_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PersonalDatas_dbo_Logins_LoginID_Ref">
+          <End Role="Logins" Type="Self.Logins" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PersonalDatas" Type="Self.PersonalDatas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Logins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonalDatas">
+              <PropertyRef Name="LoginID_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProjectPictures_dbo_Projects_ProjectID_Ref">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectPictures" Type="Self.ProjectPictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPictures">
+              <PropertyRef Name="ProjectID_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Projects_dbo_Logins_LoginID_Ref">
+          <End Role="Logins" Type="Self.Logins" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Logins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="LoginID_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Tasks_dbo_Assignments_Assignment_AssignmentId">
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assignments">
+              <PropertyRef Name="AssignmentId" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="AssignmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Tasks_dbo_Assignments_AssignmentId">
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assignments">
+              <PropertyRef Name="AssignmentId" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="AssignmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="villadsenwp_dk_dbModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Assignments" EntityType="Self.Assignments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxBreakData" EntityType="Self.DaxBreakData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxBreakWeight" EntityType="Self.DaxBreakWeight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxCompanyData" EntityType="Self.DaxCompanyData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxCompanyWeight" EntityType="Self.DaxCompanyWeight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxEmailData" EntityType="Self.DaxEmailData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxEmailWeight" EntityType="Self.DaxEmailWeight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxInputData" EntityType="Self.DaxInputData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxLoginInfo" EntityType="Self.DaxLoginInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxMeetingData" EntityType="Self.DaxMeetingData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxMeetingWeight" EntityType="Self.DaxMeetingWeight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxPhoneData" EntityType="Self.DaxPhoneData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxPhoneWeight" EntityType="Self.DaxPhoneWeight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxTaskData" EntityType="Self.DaxTaskData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxTaskDetail" EntityType="Self.DaxTaskDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxTaskWeight" EntityType="Self.DaxTaskWeight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DaxUserData" EntityType="Self.DaxUserData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DayOfWeekWeight" EntityType="Self.DayOfWeekWeight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EducationDatas" EntityType="Self.EducationDatas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginUsers" EntityType="Self.LoginUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonalDatas" EntityType="Self.PersonalDatas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectPictures" EntityType="Self.ProjectPictures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestTable1" EntityType="Self.TestTable1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestTable2" EntityType="Self.TestTable2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimeOfDayWeight" EntityType="Self.TimeOfDayWeight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__DaxBreakD__Input__2334397B" Association="Self.FK__DaxBreakD__Input__2334397B">
+            <End Role="DaxInputData" EntitySet="DaxInputData" />
+            <End Role="DaxBreakData" EntitySet="DaxBreakData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxBreakW__UserI__4E1E9780" Association="Self.FK__DaxBreakW__UserI__4E1E9780">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxBreakWeight" EntitySet="DaxBreakWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxCompan__Compa__3B0BC30C" Association="Self.FK__DaxCompan__Compa__3B0BC30C">
+            <End Role="DaxCompanyData" EntitySet="DaxCompanyData" />
+            <End Role="DaxCompanyWeight" EntitySet="DaxCompanyWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxCompan__UserI__3A179ED3" Association="Self.FK__DaxCompan__UserI__3A179ED3">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxCompanyWeight" EntitySet="DaxCompanyWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxEmailD__Input__32767D0B" Association="Self.FK__DaxEmailD__Input__32767D0B">
+            <End Role="DaxInputData" EntitySet="DaxInputData" />
+            <End Role="DaxEmailData" EntitySet="DaxEmailData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxEmailW__Compa__3EDC53F0" Association="Self.FK__DaxEmailW__Compa__3EDC53F0">
+            <End Role="DaxCompanyData" EntitySet="DaxCompanyData" />
+            <End Role="DaxEmailWeight" EntitySet="DaxEmailWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxEmailW__UserI__3DE82FB7" Association="Self.FK__DaxEmailW__UserI__3DE82FB7">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxEmailWeight" EntitySet="DaxEmailWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxInputD__UserI__2057CCD0" Association="Self.FK__DaxInputD__UserI__2057CCD0">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxInputData" EntitySet="DaxInputData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxMeetin__Input__2EA5EC27" Association="Self.FK__DaxMeetin__Input__2EA5EC27">
+            <End Role="DaxInputData" EntitySet="DaxInputData" />
+            <End Role="DaxMeetingData" EntitySet="DaxMeetingData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxMeetin__UserI__4B422AD5" Association="Self.FK__DaxMeetin__UserI__4B422AD5">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxMeetingWeight" EntitySet="DaxMeetingWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxPhoneD__Input__36470DEF" Association="Self.FK__DaxPhoneD__Input__36470DEF">
+            <End Role="DaxInputData" EntitySet="DaxInputData" />
+            <End Role="DaxPhoneData" EntitySet="DaxPhoneData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxPhoneW__Compa__42ACE4D4" Association="Self.FK__DaxPhoneW__Compa__42ACE4D4">
+            <End Role="DaxCompanyData" EntitySet="DaxCompanyData" />
+            <End Role="DaxPhoneWeight" EntitySet="DaxPhoneWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxPhoneW__UserI__41B8C09B" Association="Self.FK__DaxPhoneW__UserI__41B8C09B">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxPhoneWeight" EntitySet="DaxPhoneWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxTaskDa__Input__29E1370A" Association="Self.FK__DaxTaskDa__Input__29E1370A">
+            <End Role="DaxInputData" EntitySet="DaxInputData" />
+            <End Role="DaxTaskData" EntitySet="DaxTaskData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxTaskDa__TypeI__2BC97F7C" Association="Self.FK__DaxTaskDa__TypeI__2BC97F7C">
+            <End Role="DaxTaskDetail" EntitySet="DaxTaskDetail" />
+            <End Role="DaxTaskData" EntitySet="DaxTaskData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxTaskWe__TaskT__51EF2864" Association="Self.FK__DaxTaskWe__TaskT__51EF2864">
+            <End Role="DaxTaskDetail" EntitySet="DaxTaskDetail" />
+            <End Role="DaxTaskWeight" EntitySet="DaxTaskWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxTaskWe__UserI__50FB042B" Association="Self.FK__DaxTaskWe__UserI__50FB042B">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxTaskWeight" EntitySet="DaxTaskWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DayOfWeek__UserI__4865BE2A" Association="Self.FK__DayOfWeek__UserI__4865BE2A">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DayOfWeekWeight" EntitySet="DayOfWeekWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TimeOfDay__UserI__4589517F" Association="Self.FK__TimeOfDay__UserI__4589517F">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="TimeOfDayWeight" EntitySet="TimeOfDayWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Users_UserId" Association="Self.FK_dbo_Assignments_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_EducationDatas_dbo_Logins_LoginID_Ref" Association="Self.FK_dbo_EducationDatas_dbo_Logins_LoginID_Ref">
+            <End Role="Logins" EntitySet="Logins" />
+            <End Role="EducationDatas" EntitySet="EducationDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Events_dbo_Users_UserId" Association="Self.FK_dbo_Events_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_LoginUsers_dbo_Users_UserId_UserId" Association="Self.FK_dbo_LoginUsers_dbo_Users_UserId_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LoginUsers" EntitySet="LoginUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PersonalDatas_dbo_Logins_LoginID_Ref" Association="Self.FK_dbo_PersonalDatas_dbo_Logins_LoginID_Ref">
+            <End Role="Logins" EntitySet="Logins" />
+            <End Role="PersonalDatas" EntitySet="PersonalDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProjectPictures_dbo_Projects_ProjectID_Ref" Association="Self.FK_dbo_ProjectPictures_dbo_Projects_ProjectID_Ref">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="ProjectPictures" EntitySet="ProjectPictures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Projects_dbo_Logins_LoginID_Ref" Association="Self.FK_dbo_Projects_dbo_Logins_LoginID_Ref">
+            <End Role="Logins" EntitySet="Logins" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Tasks_dbo_Assignments_Assignment_AssignmentId" Association="Self.FK_dbo_Tasks_dbo_Assignments_Assignment_AssignmentId">
+            <End Role="Assignments" EntitySet="Assignments" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Tasks_dbo_Assignments_AssignmentId" Association="Self.FK_dbo_Tasks_dbo_Assignments_AssignmentId">
+            <End Role="Assignments" EntitySet="Assignments" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="villadsenwp_dk_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Assignments">
+          <Key>
+            <PropertyRef Name="AssignmentId" />
+          </Key>
+          <Property Name="AssignmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Assignment_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DeadLine" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Number_of_Tasks" Type="Int32" Nullable="false" />
+          <Property Name="Finished" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Assignments_dbo_Users_UserId" FromRole="Assignments" ToRole="Users" />
+          <NavigationProperty Name="Tasks" Relationship="Self.FK_dbo_Tasks_dbo_Assignments_Assignment_AssignmentId" FromRole="Assignments" ToRole="Tasks" />
+          <NavigationProperty Name="Tasks1" Relationship="Self.FK_dbo_Tasks_dbo_Assignments_AssignmentId" FromRole="Assignments" ToRole="Tasks" />
+        </EntityType>
+        <EntityType Name="DaxBreakData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="InputID" Type="Int32" />
+          <Property Name="LenMin" Type="Int32" />
+          <NavigationProperty Name="DaxInputData" Relationship="Self.FK__DaxBreakD__Input__2334397B" FromRole="DaxBreakData" ToRole="DaxInputData" />
+        </EntityType>
+        <EntityType Name="DaxBreakWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Weight" Type="Double" />
+          <NavigationProperty Name="DaxUserData" Relationship="Self.FK__DaxBreakW__UserI__4E1E9780" FromRole="DaxBreakWeight" ToRole="DaxUserData" />
+        </EntityType>
+        <EntityType Name="DaxCompanyData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InputID" Type="Int32" />
+          <NavigationProperty Name="DaxCompanyWeight" Relationship="Self.FK__DaxCompan__Compa__3B0BC30C" FromRole="DaxCompanyData" ToRole="DaxCompanyWeight" />
+          <NavigationProperty Name="DaxEmailWeight" Relationship="Self.FK__DaxEmailW__Compa__3EDC53F0" FromRole="DaxCompanyData" ToRole="DaxEmailWeight" />
+          <NavigationProperty Name="DaxPhoneWeight" Relationship="Self.FK__DaxPhoneW__Compa__42ACE4D4" FromRole="DaxCompanyData" ToRole="DaxPhoneWeight" />
+        </EntityType>
+        <EntityType Name="DaxCompanyWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="CompanyID" Type="Int32" />
+          <Property Name="WeightNumber" Type="Int32" />
+          <Property Name="Weight" Type="Double" />
+          <NavigationProperty Name="DaxCompanyData" Relationship="Self.FK__DaxCompan__Compa__3B0BC30C" FromRole="DaxCompanyWeight" ToRole="DaxCompanyData" />
+          <NavigationProperty Name="DaxUserData" Relationship="Self.FK__DaxCompan__UserI__3A179ED3" FromRole="DaxCompanyWeight" ToRole="DaxUserData" />
+        </EntityType>
+        <EntityType Name="DaxEmailData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="InputID" Type="Int32" />
+          <Property Name="AmountSend" Type="Int32" />
+          <Property Name="AmountReceived" Type="Int32" />
+          <NavigationProperty Name="DaxInputData" Relationship="Self.FK__DaxEmailD__Input__32767D0B" FromRole="DaxEmailData" ToRole="DaxInputData" />
+        </EntityType>
+        <EntityType Name="DaxEmailWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="CompanyID" Type="Int32" />
+          <Property Name="Weight" Type="Double" />
+          <Property Name="WeightNumber" Type="Int32" />
+          <NavigationProperty Name="DaxCompanyData" Relationship="Self.FK__DaxEmailW__Compa__3EDC53F0" FromRole="DaxEmailWeight" ToRole="DaxCompanyData" />
+          <NavigationProperty Name="DaxUserData" Relationship="Self.FK__DaxEmailW__UserI__3DE82FB7" FromRole="DaxEmailWeight" ToRole="DaxUserData" />
+        </EntityType>
+        <EntityType Name="DaxInputData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="HappinessScore" Type="Int32" />
+          <Property Name="DateAndTime" Type="DateTime" Precision="7" />
+          <Property Name="Used" Type="Int32" />
+          <NavigationProperty Name="DaxBreakData" Relationship="Self.FK__DaxBreakD__Input__2334397B" FromRole="DaxInputData" ToRole="DaxBreakData" />
+          <NavigationProperty Name="DaxEmailData" Relationship="Self.FK__DaxEmailD__Input__32767D0B" FromRole="DaxInputData" ToRole="DaxEmailData" />
+          <NavigationProperty Name="DaxUserData" Relationship="Self.FK__DaxInputD__UserI__2057CCD0" FromRole="DaxInputData" ToRole="DaxUserData" />
+          <NavigationProperty Name="DaxMeetingData" Relationship="Self.FK__DaxMeetin__Input__2EA5EC27" FromRole="DaxInputData" ToRole="DaxMeetingData" />
+          <NavigationProperty Name="DaxPhoneData" Relationship="Self.FK__DaxPhoneD__Input__36470DEF" FromRole="DaxInputData" ToRole="DaxPhoneData" />
+          <NavigationProperty Name="DaxTaskData" Relationship="Self.FK__DaxTaskDa__Input__29E1370A" FromRole="DaxInputData" ToRole="DaxTaskData" />
+        </EntityType>
+        <EntityType Name="DaxLoginInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserLevel" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DaxMeetingData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="InputID" Type="Int32" />
+          <Property Name="External" Type="Int32" />
+          <Property Name="LenMin" Type="Int32" />
+          <NavigationProperty Name="DaxInputData" Relationship="Self.FK__DaxMeetin__Input__2EA5EC27" FromRole="DaxMeetingData" ToRole="DaxInputData" />
+        </EntityType>
+        <EntityType Name="DaxMeetingWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Weight" Type="Double" />
+          <Property Name="WeightNumber" Type="Int32" />
+          <NavigationProperty Name="DaxUserData" Relationship="Self.FK__DaxMeetin__UserI__4B422AD5" FromRole="DaxMeetingWeight" ToRole="DaxUserData" />
+        </EntityType>
+        <EntityType Name="DaxPhoneData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="InputID" Type="Int32" />
+          <Property Name="LenMin" Type="Int32" />
+          <NavigationProperty Name="DaxInputData" Relationship="Self.FK__DaxPhoneD__Input__36470DEF" FromRole="DaxPhoneData" ToRole="DaxInputData" />
+        </EntityType>
+        <EntityType Name="DaxPhoneWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="CompanyID" Type="Int32" />
+          <Property Name="Weight" Type="Double" />
+          <Property Name="WeightNumber" Type="Int32" />
+          <NavigationProperty Name="DaxCompanyData" Relationship="Self.FK__DaxPhoneW__Compa__42ACE4D4" FromRole="DaxPhoneWeight" ToRole="DaxCompanyData" />
+          <NavigationProperty Name="DaxUserData" Relationship="Self.FK__DaxPhoneW__UserI__41B8C09B" FromRole="DaxPhoneWeight" ToRole="DaxUserData" />
+        </EntityType>
+        <EntityType Name="DaxTaskData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="InputID" Type="Int32" />
+          <Property Name="TypeID" Type="Int32" />
+          <Property Name="LenMin" Type="Int32" />
+          <NavigationProperty Name="DaxInputData" Relationship="Self.FK__DaxTaskDa__Input__29E1370A" FromRole="DaxTaskData" ToRole="DaxInputData" />
+          <NavigationProperty Name="DaxTaskDetail" Relationship="Self.FK__DaxTaskDa__TypeI__2BC97F7C" FromRole="DaxTaskData" ToRole="DaxTaskDetail" />
+        </EntityType>
+        <EntityType Name="DaxTaskDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="TaskType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DaxTaskData" Relationship="Self.FK__DaxTaskDa__TypeI__2BC97F7C" FromRole="DaxTaskDetail" ToRole="DaxTaskData" />
+          <NavigationProperty Name="DaxTaskWeight" Relationship="Self.FK__DaxTaskWe__TaskT__51EF2864" FromRole="DaxTaskDetail" ToRole="DaxTaskWeight" />
+        </EntityType>
+        <EntityType Name="DaxTaskWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="TaskType" Type="Int32" />
+          <Property Name="Weight" Type="Double" />
+          <Property Name="WeightNumber" Type="Int32" />
+          <NavigationProperty Name="DaxTaskDetail" Relationship="Self.FK__DaxTaskWe__TaskT__51EF2864" FromRole="DaxTaskWeight" ToRole="DaxTaskDetail" />
+          <NavigationProperty Name="DaxUserData" Relationship="Self.FK__DaxTaskWe__UserI__50FB042B" FromRole="DaxTaskWeight" ToRole="DaxUserData" />
+        </EntityType>
+        <EntityType Name="DaxUserData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DaxBreakWeight" Relationship="Self.FK__DaxBreakW__UserI__4E1E9780" FromRole="DaxUserData" ToRole="DaxBreakWeight" />
+          <NavigationProperty Name="DaxCompanyWeight" Relationship="Self.FK__DaxCompan__UserI__3A179ED3" FromRole="DaxUserData" ToRole="DaxCompanyWeight" />
+          <NavigationProperty Name="DaxEmailWeight" Relationship="Self.FK__DaxEmailW__UserI__3DE82FB7" FromRole="DaxUserData" ToRole="DaxEmailWeight" />
+          <NavigationProperty Name="DaxInputData" Relationship="Self.FK__DaxInputD__UserI__2057CCD0" FromRole="DaxUserData" ToRole="DaxInputData" />
+          <NavigationProperty Name="DaxMeetingWeight" Relationship="Self.FK__DaxMeetin__UserI__4B422AD5" FromRole="DaxUserData" ToRole="DaxMeetingWeight" />
+          <NavigationProperty Name="DaxPhoneWeight" Relationship="Self.FK__DaxPhoneW__UserI__41B8C09B" FromRole="DaxUserData" ToRole="DaxPhoneWeight" />
+          <NavigationProperty Name="DaxTaskWeight" Relationship="Self.FK__DaxTaskWe__UserI__50FB042B" FromRole="DaxUserData" ToRole="DaxTaskWeight" />
+          <NavigationProperty Name="DayOfWeekWeight" Relationship="Self.FK__DayOfWeek__UserI__4865BE2A" FromRole="DaxUserData" ToRole="DayOfWeekWeight" />
+          <NavigationProperty Name="TimeOfDayWeight" Relationship="Self.FK__TimeOfDay__UserI__4589517F" FromRole="DaxUserData" ToRole="TimeOfDayWeight" />
+        </EntityType>
+        <EntityType Name="DayOfWeekWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="Double" />
+          <Property Name="WeightNumber" Type="Int32" />
+          <NavigationProperty Name="DaxUserData" Relationship="Self.FK__DayOfWeek__UserI__4865BE2A" FromRole="DayOfWeekWeight" ToRole="DaxUserData" />
+        </EntityType>
+        <EntityType Name="EducationDatas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CurrentEducation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Semester" Type="Int32" Nullable="false" />
+          <Property Name="FavoriteField" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LoginID_Ref" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Logins" Relationship="Self.FK_dbo_EducationDatas_dbo_Logins_LoginID_Ref" FromRole="EducationDatas" ToRole="Logins" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="EventId" />
+          </Key>
+          <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Finished" Type="Boolean" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_Events_dbo_Users_UserId" FromRole="Events" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="secLevel" Type="Int32" Nullable="false" />
+          <Property Name="deleted" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EducationDatas" Relationship="Self.FK_dbo_EducationDatas_dbo_Logins_LoginID_Ref" FromRole="Logins" ToRole="EducationDatas" />
+          <NavigationProperty Name="PersonalDatas" Relationship="Self.FK_dbo_PersonalDatas_dbo_Logins_LoginID_Ref" FromRole="Logins" ToRole="PersonalDatas" />
+          <NavigationProperty Name="Projects" Relationship="Self.FK_dbo_Projects_dbo_Logins_LoginID_Ref" FromRole="Logins" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="LoginUsers">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserId_UserId" Type="Int32" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_dbo_LoginUsers_dbo_Users_UserId_UserId" FromRole="LoginUsers" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="PersonalDatas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LoginID_Ref" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Logins" Relationship="Self.FK_dbo_PersonalDatas_dbo_Logins_LoginID_Ref" FromRole="PersonalDatas" ToRole="Logins" />
+        </EntityType>
+        <EntityType Name="ProjectPictures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PictureUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectID_Ref" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Projects" Relationship="Self.FK_dbo_ProjectPictures_dbo_Projects_ProjectID_Ref" FromRole="ProjectPictures" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="startTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LoginID_Ref" Type="Int32" Nullable="false" />
+          <Property Name="PictureID_Ref" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Logins" Relationship="Self.FK_dbo_Projects_dbo_Logins_LoginID_Ref" FromRole="Projects" ToRole="Logins" />
+          <NavigationProperty Name="ProjectPictures" Relationship="Self.FK_dbo_ProjectPictures_dbo_Projects_ProjectID_Ref" FromRole="Projects" ToRole="ProjectPictures" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="TaskId" />
+          </Key>
+          <Property Name="TaskId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Finished" Type="Int32" Nullable="false" />
+          <Property Name="AssignmentId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Assignments" Relationship="Self.FK_dbo_Tasks_dbo_Assignments_Assignment_AssignmentId" FromRole="Tasks" ToRole="Assignments" />
+          <NavigationProperty Name="Assignments1" Relationship="Self.FK_dbo_Tasks_dbo_Assignments_AssignmentId" FromRole="Tasks" ToRole="Assignments" />
+        </EntityType>
+        <EntityType Name="TestTable1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="7" />
+          <Property Name="inputID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TestTable2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="7" />
+          <Property Name="inputID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TimeOfDayWeight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="TimePeriod" Type="Time" Precision="7" />
+          <Property Name="Weight" Type="Double" />
+          <Property Name="WeightNumber" Type="Int32" />
+          <NavigationProperty Name="DaxUserData" Relationship="Self.FK__TimeOfDay__UserI__4589517F" FromRole="TimeOfDayWeight" ToRole="DaxUserData" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Assignments" Relationship="Self.FK_dbo_Assignments_dbo_Users_UserId" FromRole="Users" ToRole="Assignments" />
+          <NavigationProperty Name="Events" Relationship="Self.FK_dbo_Events_dbo_Users_UserId" FromRole="Users" ToRole="Events" />
+          <NavigationProperty Name="LoginUsers" Relationship="Self.FK_dbo_LoginUsers_dbo_Users_UserId_UserId" FromRole="Users" ToRole="LoginUsers" />
+        </EntityType>
+        <Association Name="FK_dbo_Assignments_dbo_Users_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Assignments">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Tasks_dbo_Assignments_Assignment_AssignmentId">
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assignments">
+              <PropertyRef Name="AssignmentId" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="AssignmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Tasks_dbo_Assignments_AssignmentId">
+          <End Role="Assignments" Type="Self.Assignments" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Assignments">
+              <PropertyRef Name="AssignmentId" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="AssignmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxBreakD__Input__2334397B">
+          <End Role="DaxInputData" Type="Self.DaxInputData" Multiplicity="0..1" />
+          <End Role="DaxBreakData" Type="Self.DaxBreakData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxInputData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxBreakData">
+              <PropertyRef Name="InputID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxBreakW__UserI__4E1E9780">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxBreakWeight" Type="Self.DaxBreakWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxBreakWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxCompan__Compa__3B0BC30C">
+          <End Role="DaxCompanyData" Type="Self.DaxCompanyData" Multiplicity="0..1" />
+          <End Role="DaxCompanyWeight" Type="Self.DaxCompanyWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxCompanyData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxCompanyWeight">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxEmailW__Compa__3EDC53F0">
+          <End Role="DaxCompanyData" Type="Self.DaxCompanyData" Multiplicity="0..1" />
+          <End Role="DaxEmailWeight" Type="Self.DaxEmailWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxCompanyData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxEmailWeight">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxPhoneW__Compa__42ACE4D4">
+          <End Role="DaxCompanyData" Type="Self.DaxCompanyData" Multiplicity="0..1" />
+          <End Role="DaxPhoneWeight" Type="Self.DaxPhoneWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxCompanyData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxPhoneWeight">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxCompan__UserI__3A179ED3">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxCompanyWeight" Type="Self.DaxCompanyWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxCompanyWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxEmailD__Input__32767D0B">
+          <End Role="DaxInputData" Type="Self.DaxInputData" Multiplicity="0..1" />
+          <End Role="DaxEmailData" Type="Self.DaxEmailData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxInputData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxEmailData">
+              <PropertyRef Name="InputID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxEmailW__UserI__3DE82FB7">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxEmailWeight" Type="Self.DaxEmailWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxEmailWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxInputD__UserI__2057CCD0">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxInputData" Type="Self.DaxInputData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxInputData">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxMeetin__Input__2EA5EC27">
+          <End Role="DaxInputData" Type="Self.DaxInputData" Multiplicity="0..1" />
+          <End Role="DaxMeetingData" Type="Self.DaxMeetingData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxInputData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxMeetingData">
+              <PropertyRef Name="InputID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxPhoneD__Input__36470DEF">
+          <End Role="DaxInputData" Type="Self.DaxInputData" Multiplicity="0..1" />
+          <End Role="DaxPhoneData" Type="Self.DaxPhoneData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxInputData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxPhoneData">
+              <PropertyRef Name="InputID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxTaskDa__Input__29E1370A">
+          <End Role="DaxInputData" Type="Self.DaxInputData" Multiplicity="0..1" />
+          <End Role="DaxTaskData" Type="Self.DaxTaskData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxInputData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxTaskData">
+              <PropertyRef Name="InputID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxMeetin__UserI__4B422AD5">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxMeetingWeight" Type="Self.DaxMeetingWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxMeetingWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxPhoneW__UserI__41B8C09B">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxPhoneWeight" Type="Self.DaxPhoneWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxPhoneWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxTaskDa__TypeI__2BC97F7C">
+          <End Role="DaxTaskDetail" Type="Self.DaxTaskDetail" Multiplicity="0..1" />
+          <End Role="DaxTaskData" Type="Self.DaxTaskData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxTaskDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxTaskData">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxTaskWe__TaskT__51EF2864">
+          <End Role="DaxTaskDetail" Type="Self.DaxTaskDetail" Multiplicity="0..1" />
+          <End Role="DaxTaskWeight" Type="Self.DaxTaskWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxTaskDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxTaskWeight">
+              <PropertyRef Name="TaskType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DaxTaskWe__UserI__50FB042B">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DaxTaskWeight" Type="Self.DaxTaskWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DaxTaskWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DayOfWeek__UserI__4865BE2A">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="DayOfWeekWeight" Type="Self.DayOfWeekWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DayOfWeekWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TimeOfDay__UserI__4589517F">
+          <End Role="DaxUserData" Type="Self.DaxUserData" Multiplicity="0..1" />
+          <End Role="TimeOfDayWeight" Type="Self.TimeOfDayWeight" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DaxUserData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TimeOfDayWeight">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_EducationDatas_dbo_Logins_LoginID_Ref">
+          <End Role="Logins" Type="Self.Logins" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EducationDatas" Type="Self.EducationDatas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Logins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EducationDatas">
+              <PropertyRef Name="LoginID_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Events_dbo_Users_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Events" Type="Self.Events" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Events">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PersonalDatas_dbo_Logins_LoginID_Ref">
+          <End Role="Logins" Type="Self.Logins" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PersonalDatas" Type="Self.PersonalDatas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Logins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonalDatas">
+              <PropertyRef Name="LoginID_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Projects_dbo_Logins_LoginID_Ref">
+          <End Role="Logins" Type="Self.Logins" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Logins">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="LoginID_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_LoginUsers_dbo_Users_UserId_UserId">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="LoginUsers" Type="Self.LoginUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="LoginUsers">
+              <PropertyRef Name="UserId_UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_ProjectPictures_dbo_Projects_ProjectID_Ref">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectPictures" Type="Self.ProjectPictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPictures">
+              <PropertyRef Name="ProjectID_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="villadsenwp_dk_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="Assignments" EntityType="Self.Assignments" />
+          <EntitySet Name="DaxBreakData" EntityType="Self.DaxBreakData" />
+          <EntitySet Name="DaxBreakWeight" EntityType="Self.DaxBreakWeight" />
+          <EntitySet Name="DaxCompanyData" EntityType="Self.DaxCompanyData" />
+          <EntitySet Name="DaxCompanyWeight" EntityType="Self.DaxCompanyWeight" />
+          <EntitySet Name="DaxEmailData" EntityType="Self.DaxEmailData" />
+          <EntitySet Name="DaxEmailWeight" EntityType="Self.DaxEmailWeight" />
+          <EntitySet Name="DaxInputData" EntityType="Self.DaxInputData" />
+          <EntitySet Name="DaxLoginInfo" EntityType="Self.DaxLoginInfo" />
+          <EntitySet Name="DaxMeetingData" EntityType="Self.DaxMeetingData" />
+          <EntitySet Name="DaxMeetingWeight" EntityType="Self.DaxMeetingWeight" />
+          <EntitySet Name="DaxPhoneData" EntityType="Self.DaxPhoneData" />
+          <EntitySet Name="DaxPhoneWeight" EntityType="Self.DaxPhoneWeight" />
+          <EntitySet Name="DaxTaskData" EntityType="Self.DaxTaskData" />
+          <EntitySet Name="DaxTaskDetail" EntityType="Self.DaxTaskDetail" />
+          <EntitySet Name="DaxTaskWeight" EntityType="Self.DaxTaskWeight" />
+          <EntitySet Name="DaxUserData" EntityType="Self.DaxUserData" />
+          <EntitySet Name="DayOfWeekWeight" EntityType="Self.DayOfWeekWeight" />
+          <EntitySet Name="EducationDatas" EntityType="Self.EducationDatas" />
+          <EntitySet Name="Events" EntityType="Self.Events" />
+          <EntitySet Name="Logins" EntityType="Self.Logins" />
+          <EntitySet Name="LoginUsers" EntityType="Self.LoginUsers" />
+          <EntitySet Name="PersonalDatas" EntityType="Self.PersonalDatas" />
+          <EntitySet Name="ProjectPictures" EntityType="Self.ProjectPictures" />
+          <EntitySet Name="Projects" EntityType="Self.Projects" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Tasks" EntityType="Self.Tasks" />
+          <EntitySet Name="TestTable1" EntityType="Self.TestTable1" />
+          <EntitySet Name="TestTable2" EntityType="Self.TestTable2" />
+          <EntitySet Name="TimeOfDayWeight" EntityType="Self.TimeOfDayWeight" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK_dbo_Assignments_dbo_Users_UserId" Association="Self.FK_dbo_Assignments_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Assignments" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Tasks_dbo_Assignments_Assignment_AssignmentId" Association="Self.FK_dbo_Tasks_dbo_Assignments_Assignment_AssignmentId">
+            <End Role="Assignments" EntitySet="Assignments" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Tasks_dbo_Assignments_AssignmentId" Association="Self.FK_dbo_Tasks_dbo_Assignments_AssignmentId">
+            <End Role="Assignments" EntitySet="Assignments" />
+            <End Role="Tasks" EntitySet="Tasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxBreakD__Input__2334397B" Association="Self.FK__DaxBreakD__Input__2334397B">
+            <End Role="DaxInputData" EntitySet="DaxInputData" />
+            <End Role="DaxBreakData" EntitySet="DaxBreakData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxBreakW__UserI__4E1E9780" Association="Self.FK__DaxBreakW__UserI__4E1E9780">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxBreakWeight" EntitySet="DaxBreakWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxCompan__Compa__3B0BC30C" Association="Self.FK__DaxCompan__Compa__3B0BC30C">
+            <End Role="DaxCompanyData" EntitySet="DaxCompanyData" />
+            <End Role="DaxCompanyWeight" EntitySet="DaxCompanyWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxEmailW__Compa__3EDC53F0" Association="Self.FK__DaxEmailW__Compa__3EDC53F0">
+            <End Role="DaxCompanyData" EntitySet="DaxCompanyData" />
+            <End Role="DaxEmailWeight" EntitySet="DaxEmailWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxPhoneW__Compa__42ACE4D4" Association="Self.FK__DaxPhoneW__Compa__42ACE4D4">
+            <End Role="DaxCompanyData" EntitySet="DaxCompanyData" />
+            <End Role="DaxPhoneWeight" EntitySet="DaxPhoneWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxCompan__UserI__3A179ED3" Association="Self.FK__DaxCompan__UserI__3A179ED3">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxCompanyWeight" EntitySet="DaxCompanyWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxEmailD__Input__32767D0B" Association="Self.FK__DaxEmailD__Input__32767D0B">
+            <End Role="DaxInputData" EntitySet="DaxInputData" />
+            <End Role="DaxEmailData" EntitySet="DaxEmailData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxEmailW__UserI__3DE82FB7" Association="Self.FK__DaxEmailW__UserI__3DE82FB7">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxEmailWeight" EntitySet="DaxEmailWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxInputD__UserI__2057CCD0" Association="Self.FK__DaxInputD__UserI__2057CCD0">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxInputData" EntitySet="DaxInputData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxMeetin__Input__2EA5EC27" Association="Self.FK__DaxMeetin__Input__2EA5EC27">
+            <End Role="DaxInputData" EntitySet="DaxInputData" />
+            <End Role="DaxMeetingData" EntitySet="DaxMeetingData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxPhoneD__Input__36470DEF" Association="Self.FK__DaxPhoneD__Input__36470DEF">
+            <End Role="DaxInputData" EntitySet="DaxInputData" />
+            <End Role="DaxPhoneData" EntitySet="DaxPhoneData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxTaskDa__Input__29E1370A" Association="Self.FK__DaxTaskDa__Input__29E1370A">
+            <End Role="DaxInputData" EntitySet="DaxInputData" />
+            <End Role="DaxTaskData" EntitySet="DaxTaskData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxMeetin__UserI__4B422AD5" Association="Self.FK__DaxMeetin__UserI__4B422AD5">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxMeetingWeight" EntitySet="DaxMeetingWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxPhoneW__UserI__41B8C09B" Association="Self.FK__DaxPhoneW__UserI__41B8C09B">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxPhoneWeight" EntitySet="DaxPhoneWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxTaskDa__TypeI__2BC97F7C" Association="Self.FK__DaxTaskDa__TypeI__2BC97F7C">
+            <End Role="DaxTaskDetail" EntitySet="DaxTaskDetail" />
+            <End Role="DaxTaskData" EntitySet="DaxTaskData" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxTaskWe__TaskT__51EF2864" Association="Self.FK__DaxTaskWe__TaskT__51EF2864">
+            <End Role="DaxTaskDetail" EntitySet="DaxTaskDetail" />
+            <End Role="DaxTaskWeight" EntitySet="DaxTaskWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DaxTaskWe__UserI__50FB042B" Association="Self.FK__DaxTaskWe__UserI__50FB042B">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DaxTaskWeight" EntitySet="DaxTaskWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DayOfWeek__UserI__4865BE2A" Association="Self.FK__DayOfWeek__UserI__4865BE2A">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="DayOfWeekWeight" EntitySet="DayOfWeekWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TimeOfDay__UserI__4589517F" Association="Self.FK__TimeOfDay__UserI__4589517F">
+            <End Role="DaxUserData" EntitySet="DaxUserData" />
+            <End Role="TimeOfDayWeight" EntitySet="TimeOfDayWeight" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_EducationDatas_dbo_Logins_LoginID_Ref" Association="Self.FK_dbo_EducationDatas_dbo_Logins_LoginID_Ref">
+            <End Role="Logins" EntitySet="Logins" />
+            <End Role="EducationDatas" EntitySet="EducationDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Events_dbo_Users_UserId" Association="Self.FK_dbo_Events_dbo_Users_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Events" EntitySet="Events" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PersonalDatas_dbo_Logins_LoginID_Ref" Association="Self.FK_dbo_PersonalDatas_dbo_Logins_LoginID_Ref">
+            <End Role="Logins" EntitySet="Logins" />
+            <End Role="PersonalDatas" EntitySet="PersonalDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Projects_dbo_Logins_LoginID_Ref" Association="Self.FK_dbo_Projects_dbo_Logins_LoginID_Ref">
+            <End Role="Logins" EntitySet="Logins" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_LoginUsers_dbo_Users_UserId_UserId" Association="Self.FK_dbo_LoginUsers_dbo_Users_UserId_UserId">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LoginUsers" EntitySet="LoginUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_ProjectPictures_dbo_Projects_ProjectID_Ref" Association="Self.FK_dbo_ProjectPictures_dbo_Projects_ProjectID_Ref">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="ProjectPictures" EntitySet="ProjectPictures" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="villadsenwp_dk_dbModelStoreContainer" CdmEntityContainer="villadsenwp_dk_dbEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Assignments">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.Assignments">
+              <MappingFragment StoreEntitySet="Assignments">
+                <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+                <ScalarProperty Name="Assignment_Name" ColumnName="Assignment Name" />
+                <ScalarProperty Name="DeadLine" ColumnName="DeadLine" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Number_of_Tasks" ColumnName="Number of Tasks" />
+                <ScalarProperty Name="Finished" ColumnName="Finished" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxBreakData">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxBreakData">
+              <MappingFragment StoreEntitySet="DaxBreakData">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InputID" ColumnName="InputID" />
+                <ScalarProperty Name="LenMin" ColumnName="LenMin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxBreakWeight">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxBreakWeight">
+              <MappingFragment StoreEntitySet="DaxBreakWeight">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxCompanyData">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxCompanyData">
+              <MappingFragment StoreEntitySet="DaxCompanyData">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="InputID" ColumnName="InputID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxCompanyWeight">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxCompanyWeight">
+              <MappingFragment StoreEntitySet="DaxCompanyWeight">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="WeightNumber" ColumnName="WeightNumber" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxEmailData">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxEmailData">
+              <MappingFragment StoreEntitySet="DaxEmailData">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InputID" ColumnName="InputID" />
+                <ScalarProperty Name="AmountSend" ColumnName="AmountSend" />
+                <ScalarProperty Name="AmountReceived" ColumnName="AmountReceived" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxEmailWeight">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxEmailWeight">
+              <MappingFragment StoreEntitySet="DaxEmailWeight">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="WeightNumber" ColumnName="WeightNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxInputData">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxInputData">
+              <MappingFragment StoreEntitySet="DaxInputData">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="HappinessScore" ColumnName="HappinessScore" />
+                <ScalarProperty Name="DateAndTime" ColumnName="DateAndTime" />
+                <ScalarProperty Name="Used" ColumnName="Used" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxLoginInfo">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxLoginInfo">
+              <MappingFragment StoreEntitySet="DaxLoginInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserLevel" ColumnName="UserLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxMeetingData">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxMeetingData">
+              <MappingFragment StoreEntitySet="DaxMeetingData">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InputID" ColumnName="InputID" />
+                <ScalarProperty Name="External" ColumnName="External" />
+                <ScalarProperty Name="LenMin" ColumnName="LenMin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxMeetingWeight">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxMeetingWeight">
+              <MappingFragment StoreEntitySet="DaxMeetingWeight">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="WeightNumber" ColumnName="WeightNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxPhoneData">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxPhoneData">
+              <MappingFragment StoreEntitySet="DaxPhoneData">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InputID" ColumnName="InputID" />
+                <ScalarProperty Name="LenMin" ColumnName="LenMin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxPhoneWeight">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxPhoneWeight">
+              <MappingFragment StoreEntitySet="DaxPhoneWeight">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="WeightNumber" ColumnName="WeightNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxTaskData">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxTaskData">
+              <MappingFragment StoreEntitySet="DaxTaskData">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InputID" ColumnName="InputID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="LenMin" ColumnName="LenMin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxTaskDetail">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxTaskDetail">
+              <MappingFragment StoreEntitySet="DaxTaskDetail">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxTaskWeight">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxTaskWeight">
+              <MappingFragment StoreEntitySet="DaxTaskWeight">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="WeightNumber" ColumnName="WeightNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DaxUserData">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DaxUserData">
+              <MappingFragment StoreEntitySet="DaxUserData">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DayOfWeekWeight">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.DayOfWeekWeight">
+              <MappingFragment StoreEntitySet="DayOfWeekWeight">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="WeightNumber" ColumnName="WeightNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EducationDatas">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.EducationDatas">
+              <MappingFragment StoreEntitySet="EducationDatas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CurrentEducation" ColumnName="CurrentEducation" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="FavoriteField" ColumnName="FavoriteField" />
+                <ScalarProperty Name="LoginID_Ref" ColumnName="LoginID_Ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.Events">
+              <MappingFragment StoreEntitySet="Events">
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Finished" ColumnName="Finished" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.Logins">
+              <MappingFragment StoreEntitySet="Logins">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="secLevel" ColumnName="secLevel" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginUsers">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.LoginUsers">
+              <MappingFragment StoreEntitySet="LoginUsers">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="UserId_UserId" ColumnName="UserId_UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonalDatas">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.PersonalDatas">
+              <MappingFragment StoreEntitySet="PersonalDatas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LoginID_Ref" ColumnName="LoginID_Ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectPictures">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.ProjectPictures">
+              <MappingFragment StoreEntitySet="ProjectPictures">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PictureUrl" ColumnName="PictureUrl" />
+                <ScalarProperty Name="ProjectID_Ref" ColumnName="ProjectID_Ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.Projects">
+              <MappingFragment StoreEntitySet="Projects">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+                <ScalarProperty Name="LoginID_Ref" ColumnName="LoginID_Ref" />
+                <ScalarProperty Name="PictureID_Ref" ColumnName="PictureID_Ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tasks">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.Tasks">
+              <MappingFragment StoreEntitySet="Tasks">
+                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Finished" ColumnName="Finished" />
+                <ScalarProperty Name="AssignmentId" ColumnName="AssignmentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestTable1">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.TestTable1">
+              <MappingFragment StoreEntitySet="TestTable1">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="inputID" ColumnName="inputID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestTable2">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.TestTable2">
+              <MappingFragment StoreEntitySet="TestTable2">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="inputID" ColumnName="inputID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeOfDayWeight">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.TimeOfDayWeight">
+              <MappingFragment StoreEntitySet="TimeOfDayWeight">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="TimePeriod" ColumnName="TimePeriod" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="WeightNumber" ColumnName="WeightNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="villadsenwp_dk_dbModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
