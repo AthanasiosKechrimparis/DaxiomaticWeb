@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using DaxiomaticWeb.Models;
 
 namespace DaxiomaticWeb.Controllers
 {
@@ -35,14 +34,15 @@ namespace DaxiomaticWeb.Controllers
 
         // This is a post Method for Login
         [HttpPost]
-        public ActionResult Login(UserAccount user)
+        public ActionResult Login(DaxLoginInfo daxLogin)
         {
             using (DaxiomaticWeb.villadsenwp_dk_dbEntities myDB = new villadsenwp_dk_dbEntities())
             {
-                var usr = myDB.DaxLoginInfo.Where(u => u.Username == user.UserName && u.Password == user.PassWord).FirstOrDefault();
+                var usr = myDB.DaxLoginInfo.Where(u => u.Username == daxLogin.Username && u.Password == daxLogin.Password).FirstOrDefault();
+                
                 if (usr != null)
                 {
-                    /*Session["UserID"] = usr.UserID.ToString();*/
+                    Session["ID"] = usr.ID.ToString();
                     Session["UserName"] = usr.Username.ToString();
                     return RedirectToAction("LoggedIn");
                 }

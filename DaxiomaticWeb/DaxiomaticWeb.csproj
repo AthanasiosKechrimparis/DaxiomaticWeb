@@ -246,7 +246,6 @@
     <Compile Include="LoginUsers.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserAccount.cs" />
     <Compile Include="PersonalDatas.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
@@ -338,6 +337,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
