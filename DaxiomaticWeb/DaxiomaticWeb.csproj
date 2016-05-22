@@ -158,132 +158,134 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Assignments.cs">
+    <Compile Include="EntityFrameWork\Assignments.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AdminStatisticController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="C__MigrationHistory.cs">
+    <Compile Include="Controllers\UserStatisticsController.cs" />
+    <Compile Include="EntityFrameWork\C__MigrationHistory.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxBreakData.cs">
+    <Compile Include="EntityFrameWork\DaxBreakData.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxBreakWeight.cs">
+    <Compile Include="EntityFrameWork\DaxBreakWeight.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxCompanyData.cs">
+    <Compile Include="EntityFrameWork\DaxCompanyData.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxCompanyWeight.cs">
+    <Compile Include="EntityFrameWork\DaxCompanyWeight.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxEmailData.cs">
+    <Compile Include="EntityFrameWork\DaxEmailData.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxEmailWeight.cs">
+    <Compile Include="EntityFrameWork\DaxEmailWeight.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxInputData.cs">
+    <Compile Include="EntityFrameWork\DaxInputData.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxiomaticModel.Context.cs">
+    <Compile Include="EntityFrameWork\DaxiomaticModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DaxiomaticModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxiomaticModel.cs">
+    <Compile Include="EntityFrameWork\DaxiomaticModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxiomaticModel.Designer.cs">
+    <Compile Include="EntityFrameWork\DaxiomaticModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DaxiomaticModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DaxLoginInfo.cs">
+    <Compile Include="EntityFrameWork\DaxLoginInfo.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxMeetingData.cs">
+    <Compile Include="EntityFrameWork\DaxMeetingData.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxMeetingWeight.cs">
+    <Compile Include="EntityFrameWork\DaxMeetingWeight.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxPhoneData.cs">
+    <Compile Include="EntityFrameWork\DaxPhoneData.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxPhoneWeight.cs">
+    <Compile Include="EntityFrameWork\DaxPhoneWeight.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxTaskData.cs">
+    <Compile Include="EntityFrameWork\DaxTaskData.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxTaskDetail.cs">
+    <Compile Include="EntityFrameWork\DaxTaskDetail.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxTaskWeight.cs">
+    <Compile Include="EntityFrameWork\DaxTaskWeight.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DaxUserData.cs">
+    <Compile Include="EntityFrameWork\DaxUserData.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DayOfWeekWeight.cs">
+    <Compile Include="EntityFrameWork\DayOfWeekWeight.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EducationDatas.cs">
+    <Compile Include="EntityFrameWork\EducationDatas.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Events.cs">
+    <Compile Include="EntityFrameWork\Events.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Logins.cs">
+    <Compile Include="EntityFrameWork\Logins.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="LoginUsers.cs">
+    <Compile Include="EntityFrameWork\LoginUsers.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PersonalDatas.cs">
+    <Compile Include="EntityFrameWork\PersonalDatas.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProjectPictures.cs">
+    <Compile Include="EntityFrameWork\ProjectPictures.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Projects.cs">
+    <Compile Include="EntityFrameWork\Projects.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagrams.cs">
+    <Compile Include="EntityFrameWork\sysdiagrams.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Tasks.cs">
+    <Compile Include="EntityFrameWork\Tasks.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TestTable1.cs">
+    <Compile Include="EntityFrameWork\TestTable1.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TestTable2.cs">
+    <Compile Include="EntityFrameWork\TestTable2.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TimeOfDayWeight.cs">
+    <Compile Include="EntityFrameWork\TimeOfDayWeight.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Users.cs">
+    <Compile Include="EntityFrameWork\Users.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="DaxiomaticModel.Context.tt">
+    <Content Include="EntityFrameWork\DaxiomaticModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DaxiomaticModel.edmx</DependentUpon>
       <LastGenOutput>DaxiomaticModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DaxiomaticModel.tt">
+    <Content Include="EntityFrameWork\DaxiomaticModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DaxiomaticModel.edmx</DependentUpon>
       <LastGenOutput>DaxiomaticModel.cs</LastGenOutput>
@@ -299,11 +301,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="DaxiomaticModel.edmx">
+    <EntityDeploy Include="EntityFrameWork\DaxiomaticModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DaxiomaticModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="DaxiomaticModel.edmx.diagram">
+    <Content Include="EntityFrameWork\DaxiomaticModel.edmx.diagram">
       <DependentUpon>DaxiomaticModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -334,10 +336,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\LoggedIn.cshtml" />
+    <Content Include="Views\AdminStatistic\AdminStatisticIndex.cshtml" />
+    <Content Include="Views\UserStatistics\StatiaticsUserIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Statistics\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

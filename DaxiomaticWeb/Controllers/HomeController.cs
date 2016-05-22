@@ -34,19 +34,25 @@ namespace DaxiomaticWeb.Controllers
 
         // This is a post Method for Login
         [HttpPost]
-        public ActionResult Login(DaxLoginInfo daxLogin)
+        public ActionResult Login(EntityFrameWork.DaxLoginInfo daxLogin)
         {
-            using (DaxiomaticWeb.villadsenwp_dk_dbEntities myDB = new villadsenwp_dk_dbEntities())
+            using (DaxiomaticWeb.EntityFrameWork.villadsenwp_dk_dbEntities myDB = new EntityFrameWork.villadsenwp_dk_dbEntities())
             {
                 var usr = myDB.DaxLoginInfo.Where(u => u.Username == daxLogin.Username && u.Password == daxLogin.Password).FirstOrDefault();
                 
-                if (usr != null)
+                if (usr.UserLevel == 0)
                 {
                     Session["ID"] = usr.ID.ToString();
                     Session["UserName"] = usr.Username.ToString();
-                    return RedirectToAction("LoggedIn");
+                    return RedirectToAction("StatiaticsUserIndex","UserStatistics");
                 }
-                else
+                else if(usr.UserLevel == 1)
+                {
+                    Session["ID"] = usr.ID.ToString();
+                    Session["UserName"] = usr.Username.ToString();
+                    return RedirectToAction("AdminStatisticIndex", "AdminStatistic");
+                }
+                else if (usr != null)
                 {
                     ModelState.AddModelError("", "UserName or PassWord is not valid");
                 }
