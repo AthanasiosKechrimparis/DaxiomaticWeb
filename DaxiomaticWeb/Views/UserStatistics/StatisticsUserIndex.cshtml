@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "StatisticsUserIndex";
+}
+
+<h2>Statistics User</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Statistics</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <label>Companies</label>
+                    <img src="@Url.Action("CompanyBarChart")" alt="Favorite companies" />
+                </td>
+                <td>
+                    <label>Tasks</label>
+                    <img src="@Url.Action("TaskBarChart")" alt="Favorite Tasks" />
+                </td>
+            </tr>
+   @* <tr>
+    <td colspan="2">
+        <img src="@Url.Action("CreateLine")" alt="Line Chart using MVC" />
+    </td>
+    </tr>*@
+        </table>
+    </div>
+</body>
+</html>
