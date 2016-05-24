@@ -43,14 +43,14 @@ namespace DaxiomaticWeb.Controllers
             {
                 var usr = myDB.DaxLoginInfo.Where(u => u.Username == daxLogin.Username && u.Password == daxLogin.Password).FirstOrDefault();
                 
-                if (usr.UserLevel == 0)
+                if (usr.ID == 1)
                 {
                     Session["ID"] = session.SessionProp;
 
                     Session["UserName"] = usr.Username.ToString();
-                    return RedirectToAction("StatiaticsUserIndex","UserStatistics");
+                    return RedirectToAction("StatisticsUserIndex","UserStatistics");
                 }
-                else if(usr.UserLevel == 1)
+                else if(usr.UserLevel == 0)
                 {
                     Session["ID"] = usr.ID.ToString();
                     Session["UserName"] = usr.Username.ToString();
