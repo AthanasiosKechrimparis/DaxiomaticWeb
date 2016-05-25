@@ -15,6 +15,7 @@ namespace DaxiomaticWeb.Controllers
 {
     public class UserStatisticsController : Controller
     {
+        
         // GET: Statistics
         public ActionResult StatisticsUserIndex()
         {
@@ -26,44 +27,44 @@ namespace DaxiomaticWeb.Controllers
             return View();
         }
         EntityFrameWork.villadsenwp_dk_dbEntities myDB = new villadsenwp_dk_dbEntities();
-        Models.SessionData session = new Models.SessionData();
-        List<string> listOfCompanies = new List<string>();
+        
+        //List<string> listOfCompanies = new List<string>();
         List<string> listOfWeight = new List<string>();
         List<string> listToArrayCompanies = new List<string>();
-        List<string> listToArrayWeight = new List<string>();
+        List<string> listToArrayHappiness = new List<string>();
+        List<string> listToArrayTask = new List<string>();
 
-        int SessionData;
+            
 
         // Getting the Favorite Company
         [HttpGet]
         public ActionResult CompanyBarChart()
         {
-            SessionData = session.SessionProp;
             // To get the Favorite companies
             var favoriteCompany = from b in myDB.DaxCompanyData
-                                  where b.ID == SessionData
+                                  where b.InputID == SessionData.SessionProp
                                   select b;
 
             foreach (var item in favoriteCompany)
             {
-                listOfCompanies.Add(item.Name);
+                listToArrayCompanies.Add(item.Name);
                 listToArrayCompanies.ToArray();
             }
             // To get the Happiness Score
             var happinessScoreEF = from b in myDB.DaxInputData
-                                   where b.ID == SessionData
+                                   where b.UserID == SessionData.SessionProp
                                    select b;
 
             foreach (var item in happinessScoreEF)
             {
-                listOfWeight.Add(item.HappinessScore.ToString());
-                listToArrayWeight.ToArray();
+                listToArrayHappiness.Add(item.HappinessScore.ToString());
+                listToArrayHappiness.ToArray();
             }
             //Create bar chart
             var chart = new Chart(width: 300, height: 200)
             .AddSeries(chartType: "bar",
                             xValue: listToArrayCompanies,
-                            yValues: listToArrayWeight)
+                            yValues: listToArrayHappiness)
                             .GetBytes("png");
 
             return File(chart, "image/bytes");
@@ -73,32 +74,31 @@ namespace DaxiomaticWeb.Controllers
         [HttpGet]
         public ActionResult TaskBarChart()
         {
-            SessionData = session.SessionProp;
             // To get the Type of Tasks
             var favoriteCompany = from b in myDB.DaxTaskData
-                                  where b.InputID == SessionData
+                                  where b.InputID == SessionData.SessionProp
                                   select b;
 
             foreach (var item in favoriteCompany)
             {
-                listOfCompanies.Add(item.DaxTaskDetail.TaskType);
-                listToArrayCompanies.ToArray();
+                listToArrayTask.Add(item.DaxTaskDetail.TaskType);
+                listToArrayTask.ToArray();
             }
             // To get the Happiness Score
             var happinessScoreEF = from b in myDB.DaxInputData
-                                   where b.ID == SessionData
+                                   where b.UserID == SessionData.SessionProp
                                    select b;
 
             foreach (var item in happinessScoreEF)
             {
-                listOfWeight.Add(item.HappinessScore.ToString());
-                listToArrayWeight.ToArray();
+                listToArrayHappiness.Add(item.HappinessScore.ToString());
+                listToArrayHappiness.ToArray();
             }
             //Create bar chart
             var chart = new Chart(width: 300, height: 200)
             .AddSeries(chartType: "bar",
-                            xValue: listToArrayCompanies,
-                            yValues: listToArrayWeight)
+                            xValue: listToArrayTask,
+                            yValues: listToArrayHappiness)
                             .GetBytes("png");
 
             return File(chart, "image/bytes");

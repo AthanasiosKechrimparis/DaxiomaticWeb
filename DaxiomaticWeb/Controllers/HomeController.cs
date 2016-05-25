@@ -9,7 +9,7 @@ namespace DaxiomaticWeb.Controllers
 {
     public class HomeController : Controller
     {
-        
+       
         public ActionResult Index()
         {
             return View();
@@ -33,7 +33,8 @@ namespace DaxiomaticWeb.Controllers
         {
             return View();
         }
-        SessionData session = new SessionData();
+        SessionData session;
+        int Session1;
         // This is a post Method for Login
         [HttpPost]
         public ActionResult Login(EntityFrameWork.DaxLoginInfo daxLogin)
@@ -43,16 +44,15 @@ namespace DaxiomaticWeb.Controllers
             {
                 var usr = myDB.DaxLoginInfo.Where(u => u.Username == daxLogin.Username && u.Password == daxLogin.Password).FirstOrDefault();
                 
-                if (usr.ID == 1)
+                if (usr.UserLevel == 0)
                 {
-                    Session["ID"] = session.SessionProp;
-
+                    SessionData.SessionProp = usr.ID;
                     Session["UserName"] = usr.Username.ToString();
                     return RedirectToAction("StatisticsUserIndex","UserStatistics");
                 }
-                else if(usr.UserLevel == 0)
+                else if(usr.UserLevel == 1)
                 {
-                    Session["ID"] = usr.ID.ToString();
+                    SessionData.SessionProp = usr.ID;
                     Session["UserName"] = usr.Username.ToString();
                     return RedirectToAction("AdminStatisticIndex", "AdminStatistic");
                 }
