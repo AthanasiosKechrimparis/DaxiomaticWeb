@@ -103,5 +103,14 @@ namespace DaxiomaticWeb.Controllers
 
             return File(chart, "image/bytes");
         }
+        [HttpGet]
+        public ActionResult ReturnInput()
+        {
+            var InputData = from a in myDB.DaxInputData
+                            where a.UserID == SessionData.SessionProp
+                            select a;
+            return View();
+        }
+     
     }
 }
