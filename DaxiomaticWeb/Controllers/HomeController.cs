@@ -42,17 +42,17 @@ namespace DaxiomaticWeb.Controllers
             using (DaxiomaticWeb.EntityFrameWork.villadsenwp_dk_dbEntities myDB = new EntityFrameWork.villadsenwp_dk_dbEntities())
             {
                 var usr = myDB.DaxLoginInfo.Where(u => u.Username == daxLogin.Username && u.Password == daxLogin.Password).FirstOrDefault();
-                
-                if (usr.ID == 1)
+
+                if (usr.UserLevel == 0)
                 {
-                    Session["ID"] = session.SessionProp;
+                    SessionData.SessionProp = usr.ID;
 
                     Session["UserName"] = usr.Username.ToString();
                     return RedirectToAction("StatisticsUserIndex","UserStatistics");
                 }
-                else if(usr.UserLevel == 0)
+                else if(usr.UserLevel == 1)
                 {
-                    Session["ID"] = usr.ID.ToString();
+                    SessionData.SessionProp = usr.ID;
                     Session["UserName"] = usr.Username.ToString();
                     return RedirectToAction("AdminStatisticIndex", "AdminStatistic");
                 }

@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{696738BA-C934-49B3-974B-3FD6BA8A0C65}</ProjectGuid>
+    <ProjectGuid>{7EED0283-9A36-4286-A6DB-B205253909C7}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DaxiomaticWeb</RootNamespace>
-    <AssemblyName>DaxiomaticWeb</AssemblyName>
+    <RootNamespace>DaxiomaticWebPage</RootNamespace>
+    <AssemblyName>DaxiomaticWebPage</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -44,14 +44,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -88,8 +80,6 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -158,139 +148,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="EntityFrameWork\Assignments.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\AdminStatisticController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UserStatisticsController.cs" />
-    <Compile Include="EntityFrameWork\C__MigrationHistory.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxBreakData.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxBreakWeight.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxCompanyData.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxCompanyWeight.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxEmailData.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxEmailWeight.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxInputData.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxiomaticModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DaxiomaticModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxiomaticModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxiomaticModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DaxiomaticModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxLoginInfo.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxMeetingData.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxMeetingWeight.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxPhoneData.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxPhoneWeight.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxTaskData.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxTaskDetail.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxTaskWeight.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DaxUserData.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\DayOfWeekWeight.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\EducationDatas.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\Events.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="EntityFrameWork\Logins.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\LoginUsers.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\PersonalDatas.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\ProjectPictures.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\Projects.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SessionData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EntityFrameWork\sysdiagrams.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\Tasks.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\TestTable1.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\TestTable2.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\TimeOfDayWeight.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFrameWork\Users.cs">
-      <DependentUpon>DaxiomaticModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="EntityFrameWork\DaxiomaticModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DaxiomaticModel.edmx</DependentUpon>
-      <LastGenOutput>DaxiomaticModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="EntityFrameWork\DaxiomaticModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DaxiomaticModel.edmx</DependentUpon>
-      <LastGenOutput>DaxiomaticModel.cs</LastGenOutput>
-    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -301,13 +167,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="EntityFrameWork\DaxiomaticModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DaxiomaticModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="EntityFrameWork\DaxiomaticModel.edmx.diagram">
-      <DependentUpon>DaxiomaticModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -335,14 +194,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\LoggedIn.cshtml" />
-    <Content Include="Views\AdminStatistic\AdminStatisticIndex.cshtml" />
-    <Content Include="Views\UserStatistics\StatisticsUserIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Statistics\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -351,9 +206,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -371,9 +223,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54039</DevelopmentServerPort>
+          <DevelopmentServerPort>48976</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54039/</IISUrl>
+          <IISUrl>http://localhost:48976/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
