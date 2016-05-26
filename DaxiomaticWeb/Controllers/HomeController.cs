@@ -9,7 +9,7 @@ namespace DaxiomaticWeb.Controllers
 {
     public class HomeController : Controller
     {
-       
+        
         public ActionResult Index()
         {
             return View();
@@ -33,8 +33,7 @@ namespace DaxiomaticWeb.Controllers
         {
             return View();
         }
-        SessionData session;
-        int Session1;
+        SessionData session = new SessionData();
         // This is a post Method for Login
         [HttpPost]
         public ActionResult Login(EntityFrameWork.DaxLoginInfo daxLogin)
