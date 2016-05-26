@@ -44,6 +44,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -80,6 +88,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -148,15 +158,101 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Admin\AdminStatisticsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\User\UserStatisticsController.cs" />
+    <Compile Include="EntityFrameWork\DaxBreakData.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxBreakWeight.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxCompanyData.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxCompanyWeight.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxEmailData.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxEmailWeight.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxInputData.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\Daxiomatic.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Daxiomatic.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\Daxiomatic.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\Daxiomatic.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Daxiomatic.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxLoginInfo.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxMeetingCategories.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxMeetingData.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxMeetingTimeCategories.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxMeetingWeight.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxPhoneData.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxPhoneWeight.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxTaskData.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxTaskDetail.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxTaskWeight.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DaxUserData.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFrameWork\DayOfWeekWeight.cs">
+      <DependentUpon>Daxiomatic.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginInfo.cs" />
+    <Compile Include="Models\SessionData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="EntityFrameWork\Daxiomatic.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Daxiomatic.edmx</DependentUpon>
+      <LastGenOutput>Daxiomatic.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFrameWork\Daxiomatic.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Daxiomatic.edmx</DependentUpon>
+      <LastGenOutput>Daxiomatic.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -167,6 +263,13 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="EntityFrameWork\Daxiomatic.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Daxiomatic.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EntityFrameWork\Daxiomatic.edmx.diagram">
+      <DependentUpon>Daxiomatic.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -194,10 +297,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\UserStatistics\StatisticsUserIndex.cshtml" />
+    <Content Include="Views\AdminStatistics\AdminStatisticsIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Models\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -206,6 +312,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

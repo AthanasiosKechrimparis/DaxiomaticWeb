@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ca4b4cb191a24673908a463c28386b85" Name="Diagram1">
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxBreakData" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxBreakWeight" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxCompanyData" Width="1.5" PointX="3.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxCompanyWeight" Width="1.5" PointX="6" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxEmailData" Width="1.5" PointX="5.25" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxEmailWeight" Width="1.5" PointX="3" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxInputData" Width="1.5" PointX="3" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxLoginInfo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxMeetingCategories" Width="1.5" PointX="5.75" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxMeetingData" Width="1.5" PointX="5.25" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxMeetingTimeCategories" Width="1.5" PointX="5.75" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxMeetingWeight" Width="1.5" PointX="8" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxPhoneData" Width="1.5" PointX="5.25" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxPhoneWeight" Width="1.5" PointX="9" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxTaskData" Width="1.5" PointX="8.25" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxTaskDetail" Width="1.5" PointX="3.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxTaskWeight" Width="1.5" PointX="6" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DaxUserData" Width="1.5" PointX="0.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="villadsenwp_dk_dbModel.DayOfWeekWeight" Width="1.5" PointX="3" PointY="39.5" IsExpanded="true" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxBreakD__Input__2334397B" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxBreakW__UserI__4E1E9780" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxCompan__Compa__3B0BC30C" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxPhoneW__Compa__42ACE4D4" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxCompan__UserI__3A179ED3" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxEmailD__Input__32767D0B" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxEmailW__UserI__3DE82FB7" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxInputD__UserI__2057CCD0" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxMeetin__Input__2EA5EC27" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxPhoneD__Input__36470DEF" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxTaskDa__Input__29E1370A" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxMeetin__Categ__4C0144E4" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxMeetin__TimeC__4EDDB18F" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxMeetin__UserI__4B422AD5" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxPhoneW__UserI__41B8C09B" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxTaskDa__TypeI__2BC97F7C" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxTaskWe__TaskT__51EF2864" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DaxTaskWe__UserI__50FB042B" ManuallyRouted="false" />
+        <AssociationConnector Association="villadsenwp_dk_dbModel.FK__DayOfWeek__UserI__4865BE2A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
