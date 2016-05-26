@@ -257,6 +257,7 @@
     <Compile Include="EntityFrameWork\Projects.cs">
       <DependentUpon>DaxiomaticModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DaxLoginInfo1.cs" />
     <Compile Include="Models\SessionData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EntityFrameWork\sysdiagrams.cs">

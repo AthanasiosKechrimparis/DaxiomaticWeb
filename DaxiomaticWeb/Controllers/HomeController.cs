@@ -33,8 +33,7 @@ namespace DaxiomaticWeb.Controllers
         {
             return View();
         }
-        SessionData session;
-        int Session1;
+
         // This is a post Method for Login
         [HttpPost]
         public ActionResult Login(EntityFrameWork.DaxLoginInfo daxLogin)
