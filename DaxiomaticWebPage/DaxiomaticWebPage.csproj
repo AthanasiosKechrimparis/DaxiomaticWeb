@@ -238,6 +238,7 @@
     </Compile>
     <Compile Include="Models\LoginInfo.cs" />
     <Compile Include="Models\SessionData.cs" />
+    <Compile Include="Models\Tables\CompanyData.cs" />
     <Compile Include="Models\Tables\InputData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
