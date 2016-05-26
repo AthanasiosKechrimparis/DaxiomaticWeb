@@ -46,5 +46,7 @@ namespace DaxiomaticWebPage.EntityFrameWork
         public virtual DbSet<DayOfWeekWeight> DayOfWeekWeight { get; set; }
 
         public System.Data.Entity.DbSet<DaxiomaticWebPage.Models.LoginInfo> LoginInfoes { get; set; }
+
+        public System.Data.Entity.DbSet<DaxiomaticWebPage.Models.Tables.InputData> InputDatas { get; set; }
     }
 }

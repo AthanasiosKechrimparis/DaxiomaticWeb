@@ -238,6 +238,7 @@
     </Compile>
     <Compile Include="Models\LoginInfo.cs" />
     <Compile Include="Models\SessionData.cs" />
+    <Compile Include="Models\Tables\InputData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -303,7 +304,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
