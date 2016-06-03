@@ -13,6 +13,10 @@ namespace DaxiomaticWebPage.Models
         public string UserName { get; set; }
         [DataType(DataType.Password)]
         public string PassWord { get; set; }
-        //public int UserLevel { get; set; }
+        public LoginInfo(int ID, string UserName)
+        {
+            this.ID = ID;
+            this.UserName = UserName;
+        }
     }
 }

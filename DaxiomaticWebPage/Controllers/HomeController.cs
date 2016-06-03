@@ -46,7 +46,7 @@ namespace DaxiomaticWebPage.Controllers
                 if (usr.UserLevel == 0)
                 {
                     SessionData.SessionProp = usr.ID;
-
+                    Session["ID"] = usr.ID;
                     Session["UserName"] = usr.Username.ToString();
                     return RedirectToAction("StatisticsUserIndex", "UserStatistics");
                 }
@@ -62,6 +62,18 @@ namespace DaxiomaticWebPage.Controllers
                 }
             }
             return View();
+        }
+
+        public ActionResult LoggedIn()
+        {
+            if (Session["ID"] !=null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
         }
     }
 }

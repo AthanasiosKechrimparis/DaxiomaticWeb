@@ -239,7 +239,12 @@
     <Compile Include="Models\LoginInfo.cs" />
     <Compile Include="Models\SessionData.cs" />
     <Compile Include="Models\Tables\CompanyData.cs" />
+    <Compile Include="Models\Tables\EmailData.cs" />
     <Compile Include="Models\Tables\InputData.cs" />
+    <Compile Include="Models\Tables\MeetingData.cs" />
+    <Compile Include="Models\Tables\PhoneData.cs" />
+    <Compile Include="Models\Tables\TaskData.cs" />
+    <Compile Include="Models\Tables\TaskDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +307,8 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\UserStatistics\StatisticsUserIndex.cshtml" />
     <Content Include="Views\AdminStatistics\AdminStatisticsIndex.cshtml" />
+    <Content Include="Views\AdminStatistics\AdminIndex.cshtml" />
+    <Content Include="Views\AdminStatistics\AdminIndexdr.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

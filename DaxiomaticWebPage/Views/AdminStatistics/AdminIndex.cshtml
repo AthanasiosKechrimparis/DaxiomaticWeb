@@ -1,18 +1,17 @@
 ﻿
 @{
-    ViewBag.Title = "StatisticsUserIndex";
+    ViewBag.Title = "AdminIndex";
 }
 
+<h2>AdminIndex</h2>
 
-<h2>User Statistics</h2>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Statistics</title>
-</head>
 <body>
+    
+    <form method="post" action="CompanyBarChart">
+        @Html.DropDownList("DropDownList", (SelectList)ViewBag.DropDownValues)
+        <input type="submit" />
+    </form>
     <div>
         <fieldset>
             <legend>Favorite Company</legend>
@@ -32,4 +31,3 @@
         </fieldset>
     </div>
 </body>
-</html>
