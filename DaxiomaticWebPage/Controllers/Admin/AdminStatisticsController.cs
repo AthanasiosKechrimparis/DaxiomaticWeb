@@ -215,7 +215,7 @@ namespace DaxiomaticWebPage.Controllers.Admin
 
             // To get the Happiness Score
             var happinessScoreEF = from b in myDB.DaxInputData
-                                   where b.UserID == SessionData.SessionProp
+                                   where b.UserID == Models.SessionData.SessionProp
                                    select b;
 
             foreach (var item in happinessScoreEF)

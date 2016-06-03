@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaxiomaticWebPage", "DaxiomaticWebPage\DaxiomaticWebPage.csproj", "{7EED0283-9A36-4286-A6DB-B205253909C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaxiomaticWebApplication", "DaxiomaticWebApplication\DaxiomaticWebApplication.csproj", "{DE3F7C60-6BE6-497E-8562-287B385858E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7EED0283-9A36-4286-A6DB-B205253909C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EED0283-9A36-4286-A6DB-B205253909C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EED0283-9A36-4286-A6DB-B205253909C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE3F7C60-6BE6-497E-8562-287B385858E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE3F7C60-6BE6-497E-8562-287B385858E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE3F7C60-6BE6-497E-8562-287B385858E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE3F7C60-6BE6-497E-8562-287B385858E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

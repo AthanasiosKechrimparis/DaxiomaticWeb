@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DaxiomaticWebApplication.Models.StatisticsClasses.InputData>
+
+@{
+    ViewBag.Title = "ListOfInput";
+}
+
+<h2>ListOfInput</h2>
+<fieldset>
+    <legend>
+        List of Inputs
+    </legend>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HappinessScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateAndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emailData.AmountReceived)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emailData.AmountSend)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.meetingData.LengthMinutes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.meetingData.External)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HappinessScore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateAndTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.emailData.AmountReceived)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.emailData.AmountSend)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.meetingData.LengthMinutes)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.meetingData.External)
+                </td>
+            </tr>
+        }
+
+    </table>
+</fieldset>
+
