@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "AdminIndex";
+}
+
+<h2>AdminIndex</h2>
+
+<body>
+    <div>
+        @using (Html.BeginForm("AdminStatistics", "CompanyBarChart"))
+        {
+            @Html.DropDownList("DropDownList", (SelectList)ViewBag.DropDownValues,  new { @class = "dropDownStyle" })
+            foreach (var item in (SelectList)ViewBag.DropDownValues)
+            {
+                TempData["ID"] = item.Value;
+            }
+        }
+        <div>
+        </div>
+        <fieldset>
+            <legend>Favorite Company</legend>
+            <img src="@Url.Action("CompanyBarChart")" alt="Favorite companies" />
+        </fieldset>
+        <fieldset>
+            <legend>Favorite Task</legend>
+            <img src="@Url.Action("TaskBarChart")" alt="Favorite Tasks" />
+        </fieldset>
+        <fieldset>
+            <legend>Time of Day</legend>
+            <img src="@Url.Action("TimeOfDayLineChart")" alt="Time of day linechart" />
+        </fieldset>
+        <fieldset>
+            <legend>Day of Week</legend>
+            <img src="@Url.Action("DayToLineChart")" alt="Day of week linechart" />
+        </fieldset>
+    </div>
+</body>

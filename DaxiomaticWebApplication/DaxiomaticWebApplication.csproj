@@ -160,6 +160,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Admin\AdminStatisticsController.cs" />
     <Compile Include="Controllers\Home\HomeController.cs" />
+    <Compile Include="Controllers\User\UserImpactsController.cs" />
     <Compile Include="Controllers\User\UserStatisticsController.cs" />
     <Compile Include="EntityFrameWork\DaxBreakData.cs">
       <DependentUpon>Daxiomatic.tt</DependentUpon>
@@ -358,10 +359,11 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\UserStatistics\StatisticsUserIndex.cshtml" />
     <Content Include="Views\UserStatistics\ListOfInput.cshtml" />
+    <Content Include="Views\AdminStatistics\AdminIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AdminStatistics\" />
+    <Folder Include="Views\UserImpacts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

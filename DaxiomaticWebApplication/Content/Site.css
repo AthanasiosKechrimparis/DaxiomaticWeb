@@ -37,7 +37,7 @@ background-color: #e8eef4;
 padding: 10px 20px;
 text-decoration: none;
 line-height: 2.8em;
-CSS3 properties
+/*CSS3 properties*/
 border-radius: 4px 4px 0 0;
 }
 ul#menu li a:hover
@@ -92,4 +92,14 @@ padding:3px;
     position:absolute;
     top:0px;
     right:80px;
+}
+.dropDownStyle{
+    width : 600px;
+    color: black;
+    font-weight: bold;
+    height: 30px;
+      -moz-border-radius: 15px;
+ border-radius: 15px;
+    border:solid 1px black;
+    padding:5px;
 }
